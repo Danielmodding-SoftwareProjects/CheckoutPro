@@ -53,33 +53,38 @@ namespace CheckoutPro.Forms
 
         private void LoadPrinters()
         {
+            
             foreach (string printer in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
             {
-                PrinterSettings printerSettings = new PrinterSettings
+                try
                 {
-                    PrinterName = printer
-                };
+                    PrinterSettings printerSettings = new PrinterSettings
+                    {
+                        PrinterName = printer
+                    };
 
-                bool isOnline = printerSettings.IsValid;
-                bool isDefault = printer.Equals(new PrinterSettings().PrinterName, StringComparison.OrdinalIgnoreCase);
+                    bool isOnline = printerSettings.IsValid;
+                    bool isDefault = printer.Equals(new PrinterSettings().PrinterName, StringComparison.OrdinalIgnoreCase);
 
 
-                if (isOnline && isDefault)
-                {
-                    ComboBoxDrucker.Items.Add(printer);
-                    ComboBoxDrucker.SelectedItem = printer;
+                    if (isOnline && isDefault)
+                    {
+                        ComboBoxDrucker.Items.Add(printer);
+                        ComboBoxDrucker.SelectedItem = printer;
+                    }
+                    //else if (isOnline)
+                    //{
+                    //    ComboBoxDrucker.Items.Add(printer + "Online");
+                    //}
+                    //else if (isDefault)
+                    //{
+                    //    ComboBoxDrucker.Items.Add(printer + "Standard");
+                    //}
                 }
-                #region Printdetails
-                //else if (isOnline)
-                //{
-                //    ComboBoxDrucker.Items.Add(printer + "Online");
-                //}
-                //else if (isDefault)
-                //{
-                //    ComboBoxDrucker.Items.Add(printer + "Standard");
-                //}
-                #endregion
+                catch
+                {
 
+                }
             }
 
 

@@ -78,10 +78,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Forms\WindowPrintSettings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Forms\WindowProductItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,9 +102,6 @@
     <Compile Include="Class\ClassMethodsPrinter.cs" />
     <Compile Include="Class\ClassProduct.cs" />
     <Compile Include="Class\ClassQuittung.cs" />
-    <Compile Include="Forms\WindowPrintSettings.xaml.cs">
-      <DependentUpon>WindowPrintSettings.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forms\WindowProductItem.xaml.cs">
       <DependentUpon>WindowProductItem.xaml</DependentUpon>
     </Compile>

@@ -236,7 +236,10 @@ namespace CheckoutPro
         private void SaveProductstoFile()
         {
             string filePathDatabase = "Database.csv";
-            if (!File.Exists(filePathDatabase)) return;
+            if (!File.Exists(filePathDatabase))
+            {
+                File.Create(filePathDatabase).Dispose();
+            }
 
             StreamWriter streamWriterDatabase = new StreamWriter(filePathDatabase);
 
