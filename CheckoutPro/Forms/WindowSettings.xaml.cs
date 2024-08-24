@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using static CheckoutPro.Class.ClassAppSettings;
 using CheckoutPro.Class;
+using System.Diagnostics;
 
 
 namespace CheckoutPro.Forms
@@ -83,7 +84,14 @@ namespace CheckoutPro.Forms
                 }
                 catch
                 {
-
+                    try
+                    {
+                        Process.Start("control.exe", "/name Microsoft.DevicesAndPrinters");
+                    }
+                    catch 
+                    { 
+                        
+                    }
                 }
             }
 
